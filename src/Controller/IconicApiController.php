@@ -20,11 +20,6 @@ class IconicApiController extends AbstractController
         $this->httpClient = $httpClient;
     }
 
-    // public function sort_items($a, $b)
-    // {
-    //     return ($a['video_count'], $b['video_count'])
-    // }
-
     protected function getIconicProducts($gender, $page, $page_size)
     {
         $response = $this->httpClient->request(
@@ -32,14 +27,7 @@ class IconicApiController extends AbstractController
             'https://eve.theiconic.com.au/catalog/products?gender='.$gender.'&page='.$page.'&page_size='.$page_size.'&sort=popularity'
         );
 
-        $statusCode = $response->getStatusCode();
-        // $statusCode = 200
-        $contentType = $response->getHeaders()['content-type'][0];
-        // $contentType = 'application/json'
-        $content = $response->getContent();
-        // $content = '{"id":521583, "name":"symfony-docs", ...}'
         $content = $response->toArray();
-        // $content = ['id' => 521583, 'name' => 'symfony-docs', ...]
         
         $get_results = $this->_generateAbResults($content);
 
