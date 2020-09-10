@@ -1,5 +1,5 @@
 # Purpose
-Create a web environment, to work with Symfony + MySQL + Nginx
+Create an API to work with Iconic Dataset - Stack: Symfony + MySQL + Nginx
 
 # Requirements
 * Docker
