@@ -65,7 +65,7 @@ class IconicApiController extends AbstractController
                         $video_url = $get_video['_embedded']['videos_url'][0]['url'];
                         $prod["video_url"] = $video_url;
                         array_push($res, $prod);
-                        array_pop($prod);
+                        // array_pop($prod);
                         $less++;
                     } else {
                         array_push($res, $prod);
